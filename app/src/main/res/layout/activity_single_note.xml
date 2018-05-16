@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.lamti.simplenotes.activities.SingleNoteActivity"
+    android:id="@+id/singleNoteCL"
+    android:transitionName="sharedView">
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/noteCV"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_gravity="center"
+        app:cardCornerRadius="0dp"
+        app:contentPadding="10dp"
+        app:cardBackgroundColor="@color/colorPrimary"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" >
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <EditText
+                android:id="@+id/noteET"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+
+                android:layout_margin="0dp"
+                android:alpha="1"
+
+                android:autoText="false"
+
+                android:contextClickable="false"
+                android:ems="100"
+                android:gravity="top|start"
+                android:hint="@string/type_here"
+                android:inputType="textCapSentences|textMultiLine"
+
+                android:maxLength="1000"
+                android:maxLines="11"
+
+                android:padding="4dp"
+                android:singleLine="false"
+
+                android:textAlignment="textStart"
+                android:textColor="@color/colorText"
+                android:textColorHint="@color/colorLightPrimary"
+                app:layout_constraintBottom_toTopOf="@+id/noteInstructionsTV"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <!--android:background="?selectableItemBackgroundBorderless"-->
+            <TextView
+                android:id="@+id/noteInstructionsTV"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+
+                android:text="FINISH"
+                android:textStyle="bold"
+                android:typeface="normal"
+                android:textAlignment="center"
+                android:lineSpacingExtra="8sp"
+                android:fontFamily="@font/aclonica"
+                android:textColor="@color/colorAccent"
+                android:background="?selectableItemBackground"
+
+                android:padding="4dp"
+                android:layout_marginBottom="4dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="1.0" />
+        </android.support.constraint.ConstraintLayout>
+
+    </android.support.v7.widget.CardView>
+
+    <ImageView
+        android:id="@+id/noteTitleIV"
+        android:visibility="gone"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        app:srcCompat="@drawable/alarm_on"
+        tools:ignore="VectorDrawableCompat"
+        app:layout_constraintTop_toBottomOf="@+id/noteCV"
+        app:layout_constraintBottom_toTopOf="@+id/alarmIV"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+    <ImageView
+        android:id="@+id/alarmIV"
+        android:visibility="gone"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        app:srcCompat="@drawable/alarm_on"
+        tools:ignore="VectorDrawableCompat"
+        app:layout_constraintTop_toBottomOf="@+id/noteTitleIV"
+        app:layout_constraintBottom_toTopOf="@+id/noteCategoryIV"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+    <ImageView
+        android:id="@+id/noteCategoryIV"
+        android:visibility="gone"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        app:srcCompat="@drawable/circle_shape"
+        tools:ignore="VectorDrawableCompat"
+        app:layout_constraintTop_toBottomOf="@+id/alarmIV"
+        app:layout_constraintBottom_toTopOf="@+id/saveB"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+    <TextView
+        android:id="@+id/titleTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Title"
+        android:textSize="18sp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/noteTitleIV"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.1"
+        app:layout_constraintStart_toEndOf="@+id/noteTitleIV"
+        app:layout_constraintTop_toTopOf="@+id/noteTitleIV" />
+
+    <TextView
+        android:id="@+id/reminderTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Reminder"
+        android:textSize="18sp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/alarmIV"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.1"
+        app:layout_constraintStart_toEndOf="@+id/alarmIV"
+        app:layout_constraintTop_toTopOf="@+id/alarmIV" />
+
+    <TextView
+        android:id="@+id/categoryTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Category"
+        android:textSize="18sp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/noteCategoryIV"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.1"
+        app:layout_constraintStart_toEndOf="@+id/noteCategoryIV"
+        app:layout_constraintTop_toTopOf="@+id/noteCategoryIV" />
+
+    <TextView
+        android:id="@+id/titleValueTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:text="untitled"
+        android:textSize="18sp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/titleTV"
+        app:layout_constraintEnd_toEndOf="@+id/noteCV"
+        app:layout_constraintHorizontal_bias="0.7"
+        app:layout_constraintStart_toEndOf="@+id/titleTV"
+        app:layout_constraintTop_toTopOf="@+id/titleTV" />
+
+    <TextView
+        android:id="@+id/reminderValueTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:text="none"
+        android:textSize="18sp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/reminderTV"
+        app:layout_constraintEnd_toEndOf="@+id/titleValueTV"
+        app:layout_constraintStart_toStartOf="@+id/titleValueTV"
+        app:layout_constraintTop_toTopOf="@+id/reminderTV" />
+
+    <TextView
+        android:id="@+id/categoryValueTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:text="category 1"
+        android:textSize="18sp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/categoryTV"
+        app:layout_constraintEnd_toEndOf="@+id/titleValueTV"
+        app:layout_constraintStart_toStartOf="@+id/titleValueTV"
+        app:layout_constraintTop_toTopOf="@+id/categoryTV" />
+
+    <Button
+        android:id="@+id/saveB"
+        android:layout_width="107dp"
+        android:layout_height="42dp"
+
+        android:layout_marginBottom="24dp"
+        android:background="@mipmap/save_button"
+        android:clickable="false"
+        android:focusable="false"
+        android:text=""
+
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+</android.support.constraint.ConstraintLayout>
